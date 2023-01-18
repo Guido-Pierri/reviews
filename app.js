@@ -54,11 +54,7 @@ const randomBtn = document.querySelector(".random-btn");
 
 let currentItem = 0;
 
-function getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * reviews.length);
 
-    return randomNumber;
-};
 console.log(Math.random() * reviews.length);
 getRandomNumber();
 // load initial item
@@ -77,6 +73,12 @@ function showPerson() {
     infoEl.textContent = item.text;
 }
 
+// get a random number based on array length
+function getRandomNumber() {
+    let randomNumber = Math.floor(Math.random() * reviews.length);
+
+    return randomNumber;
+};
 // show next person
 nextBtn.addEventListener('click', function () {
     currentItem++;
@@ -94,9 +96,8 @@ prevBtnEl.addEventListener('click', function () {
     showPerson(currentItem);
 })
 
-
+// show random person
 randomBtn.addEventListener('click', function () {
     currentItem = getRandomNumber();
-    
     showPerson(currentItem);
 })
